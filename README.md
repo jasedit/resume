@@ -1,6 +1,6 @@
 # Overview
 
-A [scriptorium](https://github.com/jasedit/scriptorium) template for writing a resume or cirriculum vitae, based on the [moderncv](http://www.ctan.org/tex-archive/macros/latex/contrib/moderncv/) template.
+A [scriptorium](https://github.com/jasedit/scriptorium) template for writing a resume or cirriculum vitae, based on the [moderncv](http://www.ctan.org/tex-archive/macros/latex/contrib/moderncv/) template. **NOTE**: Currently, the majority of commands provided by the moderncv package cannot be exposed directly in MultiMarkdown, requiring dropping into raw LaTeX for most of these commands. Please see the moderncv examples provided in the package for these commands.
 
 # Instructions
 
