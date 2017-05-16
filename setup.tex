@@ -41,6 +41,7 @@
 \renewcommand{\bibliography}[1]{\addbibresource{#1.bib}}
 \bibliocommand
 \renewcommand*{\bibfont}{\footnotesize}
+\newcommand{\citep}[1]{\fullcite{#1}}
 \fi
 
 \newlength\mylen
@@ -50,8 +51,6 @@
 \addtolength\mylen{-2mm}
 \newcommand\mybitem[1]{
 \textbullet \,#1\\}
-
-\renewcommand{\citep}{\fullcite}
 
 \ifdefined\mypackages
 \input{\mypackages}
