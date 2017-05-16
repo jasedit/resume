@@ -56,10 +56,10 @@
 \input{\mypackages}
 \fi
 
-\newcommand{\splitauthor}[1]{\@spacesplit#1\@nil}
-\def\@spacesplit#1 #2\@nil{\name{#1}{#2}}
+\newcommand{\splitstring}[1]{\expandafter\mysplit#1\@nil}
+\def\mysplit#1 #2\@nil{\name{#1}{#2}}
 
-\splitauthor{\myauthor}
+\splitstring{\myauthor}
 
 \ifdefined\mytitle
 \title{\mytitle}
