@@ -1,2 +1,2 @@
-resume.mmd: frontmatter.mmd,
+resume.mmd: frontmatter.mmd
 abstract.mmd: abstract.mmd
