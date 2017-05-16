@@ -1,0 +1,116 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+% possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+\documentclass[10pt,letterpaper,sans]{moderncv}
+
+\ifx\mystyle\undefined
+\def\mystyle{banking}
+\fi
+
+\ifx\mycolor\undefined
+\def\mycolor{blue}
+% modern themes
+% style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvstyle{\mystyle}
+% color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+\moderncvcolor{\mycolor}
+\nopagenumbers{}
+
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+
+% adjust the page margins
+\usepackage[margin=0.3in]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+\ifdefined\bibliocommand
+\usepackage[
+    backend=biber,
+    url=false,
+    doi=false,
+    isbn=false,
+    safeinputenc=true
+]{biblatex}
+\AtEveryBibitem{\clearfield{issn}}
+\renewcommand{\bibliography}[1]{\addbibresource{#1.bib}}
+\bibliocommand
+\renewcommand*{\bibfont}{\footnotesize}
+\fi
+
+\newlength\mylen
+\addtolength\mylen{\linewidth}
+\addtolength\mylen{-\hintscolumnwidth}
+\addtolength\mylen{-\separatorcolumnwidth}
+\addtolength\mylen{-2mm}
+\newcommand\mybitem[1]{
+\textbullet \,#1\\}
+
+\renewcommand{\citep}{\fullcite}
+
+\ifdefined\mypackages
+\input{\mypackages}
+\fi
+
+\newcommand{\splitauthor}[1]{\@spacesplit#1\@nil}
+\def\@spacesplit#1 #2\@nil{\name{#1}{#2}}
+
+\splitauthor{\myauthor}
+
+\ifdefined\mytitle
+\title{\mytitle}
+\else
+\mytitle{R\'{e}sum\'{e}}
+\fi
+
+\ifdefined\myaddress
+\address{\myaddress}
+\fi
+
+\ifdefined\mymobile
+\phone[mobile]{\mymobile}
+\fi
+
+\ifdefined\myfixed
+\phone[fixed]{\myfixed}
+\fi
+
+\ifdefined\myfax
+\phone[fax]{\myfax}
+\fi
+
+\ifdefined\myemail
+\email{\myemail}
+\fi
+
+\ifdefined\mylinkedin
+\social[linkedin]{\mylinkedin}
+\fi
+
+\ifdefined\mytwitter
+\social[twitter]{\mytwitter}
+\fi
+
+\ifdefined\mygithub
+\social[github]{\mygithub}
+\fi
+
+\ifdefined\myextrainfo
+\extrainfo{\myextrainfo}
+\fi
+
+\ifdefined\myphoto
+\photo[64pt][0.4pt]{\myphoto}
+\fi
+
+\begin{document}
+\makecvtitle
+
+\ifdefined{\myabstract}
+\quote{\input{\myabstract}}
+\fi
